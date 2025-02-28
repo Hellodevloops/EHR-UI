@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".", // Added to make @/ paths work relative to tsconfig.json location
+    "paths": {
+      "@/*": ["./src/*"], // Already good, mapping @/ to src folder
+      "@/components/*": ["./src/components/*"], // Added for component imports
+      "@/lib/*": ["./src/lib/*"], // Added for utilities/libs
+      "@/types/*": ["./src/types/*"] // Added for type definitions
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    // Added some additional useful options
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next",
+    "out"
+  ]
+}
